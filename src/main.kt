@@ -3,7 +3,7 @@ fun main() {
 
     val animais = listOf("Cachorro", "Gato", "Pássaro", "Peixe", "Hamster")
 
-    val cores = listOf("Vermelho", "Azul", "Verde", "Amarelo", "Roxo")
+    val goat = listOf("Messi")
 
     val listaDeRegras = listOf(
         Requisito("Mínimo de 5 caracteres") { it.length >= 5 },
@@ -28,7 +28,7 @@ fun main() {
 
         Requisito("Deve conter um animal de estimação") { animais.any { animal -> it.contains(animal) } },
 
-        Requisito("Deve conter uma cor") { cores.any { cor -> it.contains(cor) } }
+        Requisito("Deve conter o melhor jogador de futebol da história") { goat.any { goat -> it.contains(goat) } }
     )
 
     var senhaAprovada = false
@@ -52,19 +52,6 @@ fun main() {
         if (erroEncontrado != null) {
             println("❌ERRO: $erroEncontrado")
             println("Tentativas: $tentativas")
-
-            if (tentativas == 4) {
-                println("Dica: tente algo como 'Matematica'!")
-            }
-
-            if (tentativas == 7) {
-                println("Já errou 7 vezes, vai com calma!")
-            }
-
-            if (tentativas == 11) {
-                println("Dica: tente algo como 'Cachorro'!")
-            }
-
 
         } else {
             println("✅SUCESSO! Senha aceite pelo Overlord.")
